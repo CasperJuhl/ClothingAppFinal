@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ClothingApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alternativeLogin"><u><b>Alternative login</b></u></string>
+    <string name="saveData"><u><b>Save data in:</b></u></string>
+</resources>

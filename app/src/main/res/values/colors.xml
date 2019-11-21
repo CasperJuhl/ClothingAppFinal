@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="backgroundColor">#FFFFFF</color> <!--Added for pure white background-->
+    <color name="logoColor">#CF1717</color> <!--Added for "red" color in ClothComb logo-->
+    <color name="allBlack">#000000</color> <!--Added for black color on UI-->
+</resources>

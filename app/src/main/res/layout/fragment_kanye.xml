@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.AfterLoginActivity">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/getApiButton"
+        android:layout_width="136dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="52dp"
+        android:background="@color/allBlack"
+        android:text="Get inspiration"
+        android:textColor="@color/backgroundColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/displayKanyeText"
+        android:layout_width="227dp"
+        android:layout_height="147dp"
+        android:layout_marginBottom="56dp"
+        android:text="Why, if someone is good in one field can they not be accepted or given the slightest opportunity to express and be creative in other fields?"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@color/allBlack"
+        app:layout_constraintBottom_toTopOf="@+id/getApiButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewApi"
+        android:layout_width="174dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/kanye"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
