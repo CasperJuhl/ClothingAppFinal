@@ -11,6 +11,7 @@
         <!-- TODO: Update blank fragment layout -->
 
     <ScrollView
+        android:id="@+id/scrollFavorite"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="146dp"
@@ -21,9 +22,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/backgroundColor">
-
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/scrollTextview"
                 style="@style/ClothStyle"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
