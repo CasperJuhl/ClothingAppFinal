@@ -78,7 +78,12 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 
     public void saveCloud(String brand, String name, String website, String itemcode)
  {
-     if(brandText.getText() != null && nameText.getText() != null && websiteText.getText() != null) {
+     if(brand.equals("") || name.equals("")) {
+         Toast toast = Toast.makeText(getContext(), "Error! Input values!", Toast.LENGTH_SHORT);
+         toast.show();
+     }
+     else
+     {
          readWrite(brand, name, website, itemcode);
          Toast toast = Toast.makeText(getContext(), brandText.getText().toString() + " " + nameText.getText().toString() + " saved!", Toast.LENGTH_SHORT);
          View view = toast.getView();
@@ -94,11 +99,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
          nameText.setText("");
          websiteText.setText("");
          itemID.setText("");
-     }
-     else
-     {
-         Toast toast = Toast.makeText(getContext(), "Error! Input values!", Toast.LENGTH_SHORT);
-         toast.show();
      }
  }
 
