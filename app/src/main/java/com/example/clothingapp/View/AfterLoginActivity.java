@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class AfterLoginActivity extends AppCompatActivity {
 
     ClothViewModel viewModel;
-
+    FavoriteFragment favFrag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +43,7 @@ public class AfterLoginActivity extends AppCompatActivity {
                         break;
                     case R.id.addlist:
                         transaction.replace(R.id.fragmentHolder, new AddItemFragment());
+
                         break;
                     case R.id.Kanye:
                         transaction.replace(R.id.fragmentHolder, new KanyeFragment());
@@ -57,4 +58,5 @@ public class AfterLoginActivity extends AppCompatActivity {
     public void updateView(View view) {
         viewModel.updateView();
     }
+
 }

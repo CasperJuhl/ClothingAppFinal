@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollFavorite"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".View.FavoriteFragment">
+    tools:context=".View.AfterLoginActivity">
 
-
-        <!-- TODO: Update blank fragment layout -->
-
-    <ScrollView
-        android:id="@+id/scrollFavorite"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="435dp">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/backgroundColor">
-            <TextView
-                android:id="@+id/scrollTextview"
-                style="@style/ClothStyle"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_weight="1"
-                android:text="Bulbasaur" />
-        </LinearLayout>
-    </ScrollView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/ClothStyle"
+                    android:id="@+id/linearLayoutScroll"
+                    android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/scrollTextview"
+                            style="@style/ClothStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="SomeBrand"></TextView>
+                </LinearLayout>
+        </ScrollView>
+</RelativeLayout>

@@ -10,12 +10,12 @@ import java.util.ArrayList;
 
 public class DBClass {
 
-    private ArrayList<ClothData> clothArrayList;
+    private static ArrayList<ClothData> clothArrayList;
 
     public void saveToDB(String brand, String name, String website, String itemcode) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
-        clothArrayList = new ArrayList<ClothData>();
+        //clothArrayList = new ArrayList<ClothData>();
         ClothData clothData = new ClothData(brand, name, website, itemcode);
         ref.push().setValue(clothData);
         //ref.child("Items").push().setValue(clothData);
@@ -23,6 +23,7 @@ public class DBClass {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                clothArrayList = new ArrayList<ClothData>();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     ClothData data = ds.getValue(ClothData.class);
                     clothArrayList.add(data);
