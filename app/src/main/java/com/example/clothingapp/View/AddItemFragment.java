@@ -55,8 +55,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         if(aSwitch.isChecked())
         {
             saveLocal(brandText.getText().toString(), nameText.getText().toString(), websiteText.getText().toString(), itemID.getText().toString());
-            Toast toast = Toast.makeText(getContext(),"I am saving locally...", Toast.LENGTH_SHORT);
-            toast.show();
         }
         else
         {
@@ -66,12 +64,16 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     }
 
     private void saveLocal(String brand, String name, String website, String itemcode) {
-        if(brandText.getText() != null && nameText.getText() != null && websiteText.getText() != null) {
-            clothViewModel.saveLocal(brand, name, website, itemcode);
+        String[] data = new String[4];
+        if(brand.equals("") || name.equals("")) {
+            Toast toast = Toast.makeText(getContext(), "Error! Input values!", Toast.LENGTH_SHORT);
+            toast.show();
         }
         else
         {
-            Toast toast = Toast.makeText(getContext(), "Error! Input values!", Toast.LENGTH_SHORT);
+            data = clothViewModel.saveLocal(brand, name, website, itemcode, getContext());
+            Toast toast = Toast.makeText(getContext(), "I am local data: Brand: " + data[0] + " Name: " +
+                    data[1] + " Website: " + data[2] + " Itemcode: "+ data[3], Toast.LENGTH_LONG);
             toast.show();
         }
     }

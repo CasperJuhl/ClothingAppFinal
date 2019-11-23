@@ -57,21 +57,26 @@ public class FavoriteFragment extends Fragment {
     public void populateView()
     {
         arrayList = viewModel.getClothArrayList();
-        linearLayoutScroll.removeAllViews();
-        for (int i = 0; i<arrayList.size(); i++){
-            TextView favorites = new TextView(getContext());
-            ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            favorites.setText("Brand: " + arrayList.get(i).getBrand() + "\n Name: " + arrayList.get(i).getName() + "\n Website: "
-                    + arrayList.get(i).getSite() + "\n Itemnumber: " + arrayList.get(i).getItemcode());
-            favorites.setTextColor(Color.BLACK);
-            favorites.setTextAppearance(R.style.ClothStyleScroll);
-            favorites.setLayoutParams(lp);
-            favorites.setGravity(Gravity.CENTER);
-            favorites.setPadding(0,0,0,100);
-            favorites.setElegantTextHeight(true);
-            favorites.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-            favorites.setSingleLine(false);
-            linearLayoutScroll.addView(favorites);
+        if(arrayList!=null) {
+            linearLayoutScroll.removeAllViews();
+            for (int i = 0; i < arrayList.size(); i++) {
+                TextView favorites = new TextView(getContext());
+                ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                favorites.setText("Brand: " + arrayList.get(i).getBrand() + "\n Name: " + arrayList.get(i).getName() + "\n Website: "
+                        + arrayList.get(i).getSite() + "\n Itemnumber: " + arrayList.get(i).getItemcode());
+                favorites.setTextColor(Color.BLACK);
+                favorites.setTextAppearance(R.style.ClothStyleScroll);
+                favorites.setLayoutParams(lp);
+                favorites.setGravity(Gravity.CENTER);
+                favorites.setPadding(0, 0, 0, 100);
+                favorites.setElegantTextHeight(true);
+                favorites.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                favorites.setSingleLine(false);
+                linearLayoutScroll.addView(favorites);
+            }
+        }
+        else {
+                //Error
         }
     }
 }

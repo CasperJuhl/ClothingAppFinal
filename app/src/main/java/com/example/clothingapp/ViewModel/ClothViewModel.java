@@ -1,5 +1,7 @@
 package com.example.clothingapp.ViewModel;
 
+import android.content.Context;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -9,6 +11,7 @@ import com.example.clothingapp.Model.Model;
 import com.example.clothingapp.Model.Parameters;
 import com.example.clothingapp.Model.ApiRepository;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ClothViewModel extends ViewModel {
@@ -38,12 +41,15 @@ public class ClothViewModel extends ViewModel {
         dbClass.saveToDB(brand, name, website, itemcode);
     }
 
-    public void saveLocal(String brand, String name, String website, String itemcode) {
-        dbClass.savetoDevice(brand, name, website, itemcode);
+    public String[] saveLocal(String brand, String name, String website, String itemcode, Context context) {
+        String[] data;
+        data = dbClass.savetoDevice(brand, name, website, itemcode, context);
+        return data;
     }
 
     public ArrayList<ClothData> getClothArrayList() {
         ArrayList<ClothData> clothArrayList = dbClass.getClothArrayList();
         return clothArrayList;
     }
+
 }
